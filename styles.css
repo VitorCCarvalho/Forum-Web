@@ -26,12 +26,83 @@ button {
     transition: all 0.2s ease;
 }
 
+/* Top Navigation Bar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0 20px;
+    height: 60px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    color: #FF4500;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.search-bar {
+    flex-grow: 1;
+    max-width: 650px;
+    margin: 0 20px;
+}
+
+.search-bar form {
+    display: flex;
+    height: 36px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    background-color: #F6F7F8;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    padding: 0 10px;
+}
+
+.user-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn {
+    background-color: transparent;
+    border: 1px solid #0079D3;
+    color: #0079D3;
+}
+
+.login-btn:hover {
+    background-color: rgba(0, 121, 211, 0.1);
+}
+
+.signup-btn {
+    background-color: #0079D3;
+    color: white;
+}
+
+.signup-btn:hover {
+    background-color: #016fc1;
+}
+
 /* Main Content Container */
 .container {
     max-width: 1200px;
     margin: 20px auto;
     display: grid;
-    grid-template-columns: 330px 1fr;
+    grid-template-columns: 1fr 330px;
     grid-gap: 24px;
     padding: 0 20px;
 }
@@ -159,6 +230,93 @@ button {
     margin-right: 6px;
 }
 
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar-section {
+    background-color: white;
+    border-radius: 4px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-section h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #1c1c1c;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EDEFF1;
+}
+
+.about p {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.create-post-btn {
+    width: 100%;
+    background-color: #0079D3;
+    color: white;
+    font-weight: 700;
+    padding: 10px 16px;
+}
+
+.create-post-btn:hover {
+    background-color: #016fc1;
+}
+
+.forum-list {
+    list-style-type: none;
+}
+
+.forum-list li {
+    margin-bottom: 12px;
+}
+
+.forum-list a {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1c1c1c;
+    font-weight: 500;
+}
+
+.forum-list a:hover {
+    color: #0079D3;
+}
+
+.forum-list img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.view-all-btn {
+    width: 100%;
+    background-color: #F6F7F8;
+    color: #0079D3;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.view-all-btn:hover {
+    background-color: #EDEFF1;
+}
+
+.rules ol {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.rules li {
+    margin-bottom: 8px;
+}
+
 /* Footer */
 footer {
     background-color: white;
@@ -198,13 +356,29 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    /* Ensure sidebar appears above posts on mobile */
-    app-sidebar {
+    .sidebar {
         order: -1;
     }
 }
 
 @media (max-width: 600px) {
+    .top-bar {
+        padding: 0 10px;
+        height: auto;
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        padding: 10px 0;
+    }
+    
+    .search-bar {
+        order: 3;
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
     .post {
         flex-direction: column;
     }

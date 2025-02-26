@@ -1,0 +1,27 @@
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="sidebar-section about">
+        <h2>About ForumWeb</h2>
+        <p>A community-driven platform for discussions on any topic. Join us!</p>
+        <button class="create-post-btn">Create Post</button>
+    </div>
+
+    <div class="sidebar-section top-forums">
+        <h2>Popular Forums</h2>
+        <ul class="forum-list">
+            <li *ngFor="let forum of popularForums">
+                <a href="#">
+                    <img [src]="forum.image" alt="f/{{forum.name}}"> f/{{forum.name}}
+                </a>
+            </li>
+        </ul>
+        <button class="view-all-btn">View All Forums</button>
+    </div>
+
+    <div class="sidebar-section rules">
+        <h2>Forum Rules</h2>
+        <ol>
+            <li *ngFor="let rule of forumRules">{{ rule }}</li>
+        </ol>
+    </div>
+</aside>

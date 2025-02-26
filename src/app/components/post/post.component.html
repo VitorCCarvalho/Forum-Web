@@ -1,0 +1,21 @@
+<div class="post">
+    <div class="vote-controls">
+        <button class="upvote" (click)="upvote()"><i class="fas fa-arrow-up"></i></button>
+        <span class="vote-count">{{ post.votes }}</span>
+        <button class="downvote" (click)="downvote()"><i class="fas fa-arrow-down"></i></button>
+    </div>
+    <div class="post-content">
+        <div class="post-info">
+            <span class="forum-name">f/{{ post.forum }}</span>
+            <span class="post-author">Posted by u/{{ post.author }}</span>
+            <span class="post-time">{{ post.time }}</span>
+        </div>
+        <h3 class="post-title">{{ post.title }}</h3>
+        <p class="post-text">{{ post.content }}</p>
+        <div class="post-actions">
+            <button><i class="far fa-comment"></i> {{ post.comments }} Comments</button>
+            <button><i class="fas fa-share"></i> Share</button>
+            <button><i class="far fa-bookmark"></i> Save</button>
+        </div>
+    </div>
+</div>

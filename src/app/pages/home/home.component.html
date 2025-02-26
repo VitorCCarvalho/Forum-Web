@@ -1,0 +1,40 @@
+<app-top-bar />
+
+<div class="container">
+    <main>
+        <!-- Post Sorting Options -->
+        <div class="post-sorting">
+            <button 
+                [class.active]="sortBy === 'hot'"
+                (click)="setSortBy('hot')"
+            >
+                <i class="fas fa-fire"></i> Hot
+            </button>
+            <button 
+                [class.active]="sortBy === 'new'"
+                (click)="setSortBy('new')"
+            >
+                <i class="fas fa-certificate"></i> New
+            </button>
+            <button 
+                [class.active]="sortBy === 'top'"
+                (click)="setSortBy('top')"
+            >
+                <i class="fas fa-trophy"></i> Top
+            </button>
+            <button 
+                [class.active]="sortBy === 'rising'"
+                (click)="setSortBy('rising')"
+            >
+                <i class="fas fa-chart-line"></i> Rising
+            </button>
+        </div>
+
+        <!-- Posts using Post Component -->
+        @for (post of posts; track post.title) {
+            <!-- <app-post [post]="post" /> -->
+        }
+    </main>
+    
+    <app-sidebar />
+</div>
