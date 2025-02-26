@@ -21,7 +21,7 @@ interface Post {
   imports: [RouterModule, TopBarComponent, SidebarComponent]
 })
 export class AppComponent {
-  title = 'ForumWeb';
+  title = 'CodeSpace';
   
   posts: Post[] = [
     {
