@@ -1,0 +1,23 @@
+<div class="item-list-container">
+  <h2 class="list-title" *ngIf="title">{{ title }}</h2>
+  
+  <div class="loading-indicator" *ngIf="loading">
+    <p>Loading...</p>
+  </div>
+  
+  <div class="empty-message" *ngIf="!loading && items.length === 0">
+    <p>{{ emptyMessage }}</p>
+  </div>
+  
+  <div class="items-container" *ngIf="!loading && items.length > 0">
+    <div class="item-card" *ngFor="let item of items" [routerLink]="item.routerLink">
+      <div class="item-header">
+        <h3 class="item-title">{{ item.title }}</h3>
+        <span class="item-info" *ngIf="showAdditionalInfo && item.additionalInfo">{{ item.additionalInfo }}</span>
+      </div>
+      <div class="item-content">
+        <p class="item-text">{{ truncateText(item.text) }}</p>
+      </div>
+    </div>
+  </div>
+</div>
