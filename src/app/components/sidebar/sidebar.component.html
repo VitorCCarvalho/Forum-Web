@@ -9,9 +9,9 @@
     <div class="sidebar-section top-forums">
         <h2>Popular Forums</h2>
         <ul class="forum-list">
-            <li *ngFor="let forum of popularForums">
+            <li *ngFor="let forum of listForums">
                 <a href="#">
-                    <img [src]="forum.image" alt="f/{{forum.name}}"> f/{{forum.name}}
+                    {{forum.name}}
                 </a>
             </li>
         </ul>

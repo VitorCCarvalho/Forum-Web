@@ -7,11 +7,18 @@ import { ForumService } from '../forum/forum.service';
 import { RouterLink } from '@angular/router';
 import { FthreadReactionComponent } from '../reaction/fthread-reaction/fthread-reaction.component';
 import { NgClass } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-fthread',
   standalone: true,
-  imports: [ RouterLink, FthreadReactionComponent, NgClass ],
+  imports: [ RouterLink, HttpClientModule, FthreadReactionComponent, NgClass ],
+  providers: [
+    FThreadService,
+    UserService,
+    ForumService,
+    FthreadReactionService
+  ],
   templateUrl: './fthread.component.html',
   styleUrls: ['./fthread.component.scss']
 })

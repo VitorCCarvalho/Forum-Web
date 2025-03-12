@@ -1,0 +1,18 @@
+<div class="forum-threads-container">
+  <div class="forum-header" *ngIf="forum">
+    <h1>{{ forum.name }}</h1>
+    <p>{{ forum.description }}</p>
+  </div>
+  
+  <div class="threads-list">
+    <div class="sticky-threads" *ngIf="stickyThreads.length > 0">
+      <h2>Pinned Threads</h2>
+      <app-fthread *ngFor="let thread of stickyThreads" [id]="thread.id? thread.id : -1"></app-fthread>
+    </div>
+    
+    <div class="regular-threads">
+      <h2>Threads</h2>
+      <app-fthread *ngFor="let thread of regularThreads" [id]="thread.id? thread.id : -1"></app-fthread>
+    </div>
+  </div>
+</div>

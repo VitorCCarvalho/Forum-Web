@@ -6,13 +6,11 @@ import { FthreadReaction } from './fthread-reaction';
 import { jwtDecode } from 'jwt-decode';
 import { NgClass } from '@angular/common';
 import { StorageService } from '../../../services/storage/storage.service';
-import { ModalComponent } from '../../modal/modal.component';
-import { WarningDialogComponent } from "../../dialog/warning-dialog/warning-dialog.component";
 
 @Component({
   selector: 'app-fthread-reaction',
   standalone: true,
-  imports: [NgClass, ModalComponent, WarningDialogComponent],
+  imports: [NgClass],
   templateUrl: './fthread-reaction.component.html',
   styleUrls: ['./fthread-reaction.component.scss']
 })

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Forum } from '../forum/forum';
+import { ForumService } from '../forum/forum.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,18 +10,17 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit{
   // Popular forums data
-  popularForums = [
-    { name: 'tech', image: 'https://via.placeholder.com/24' },
-    { name: 'programming', image: 'https://via.placeholder.com/24' },
-    { name: 'webdesign', image: 'https://via.placeholder.com/24' },
-    { name: 'music', image: 'https://via.placeholder.com/24' },
-    { name: 'movies', image: 'https://via.placeholder.com/24' },
-    { name: 'gaming', image: 'https://via.placeholder.com/24' },
-    { name: 'sports', image: 'https://via.placeholder.com/24' },
-    { name: 'news', image: 'https://via.placeholder.com/24' }
-  ];
+  listForums: Forum[] = [];
+
+  constructor(private forumService: ForumService) { }
+
+  ngOnInit(): void {
+    this.forumService.listar().subscribe((forums) => {
+      this.listForums = forums;
+    })
+  }
 
   // Forum rules
   forumRules = [
@@ -30,5 +31,4 @@ export class SidebarComponent {
     'No harassment or bullying'
   ];
 
-  constructor() { }
 }
